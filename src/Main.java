@@ -1,0 +1,15 @@
+public class Main{
+    public static void main(String[] args){
+    Funciones funciones = new Funciones();
+        //funciones.punto1();
+        //funciones.punto2();
+        //funciones.punto3();
+        //funciones.punto4();
+        //funciones.punto5();
+        //funciones.punto6();
+        //funciones.punto7();
+        //funciones.punto8();
+        //funciones.punto9();
+        //funciones.punto10();
+    }
+}
