@@ -11,5 +11,9 @@ public class Main{
         //funciones.punto8();
         //funciones.punto9();
         //funciones.punto10();
+        //funciones.punto11();
+        //funciones.punto12();
+        //funciones.punto13();
+        funciones.punto14();
     }
 }

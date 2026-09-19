@@ -157,4 +157,84 @@ public class Funciones {
 
         sc.close();
     }
+
+    void punto11(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese la cantidad de numeros: ");
+        int n = sc.nextInt();
+
+        double suma = 0;
+        for (int i = 0; i <= n ; i++) {
+            System.out.println("Ingrese el numero " + i + ": ");
+            double numero = sc.nextDouble();
+            suma += numero;
+        }
+
+        double promedio = suma / n;
+        System.out.println("El promedio es: " + promedio);
+
+        sc.close();
+    }
+
+    void punto12(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese x1: ");
+        double x1 = sc.nextDouble();
+        System.out.print("Ingrese y1: ");
+        double y1 = sc.nextDouble();
+        System.out.print("Ingrese x2: ");
+        double x2 = sc.nextDouble();
+        System.out.print("Ingrese y2: ");
+        double y2 = sc.nextDouble();
+
+        double dx = x2 - x1;
+        double dy = y2 - y1;
+        double distancia = Math.sqrt(dx * dx + dy * dy);
+
+        System.out.println("La distancia es: " + distancia);
+
+        sc.close();
+    }
+
+    void punto13(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese un dígito: ");
+        int n = sc.nextInt();
+
+        int numero1 = n;
+        int numero2 = (n * 10) + n;
+        int numero3 = (n * 100) + (n * 10) + n;
+
+        int suma = numero1 + numero2 + numero3;
+
+        System.out.println(numero1);
+        System.out.println(numero2);
+        System.out.println(numero3);
+        System.out.println("La suma es: " + suma);
+
+        sc.close();
+    }
+
+    void punto14(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese la cantidad de segundos: ");
+        int segundosTotales = sc.nextInt();
+
+        int horas = segundosTotales / 3600;
+        int resto = segundosTotales % 3600;
+        int minutos = resto / 60;
+        int segundos = resto % 60;
+
+        System.out.printf("%02d:%02d:%02d%n", horas, minutos, segundos);
+
+        sc.close();
+    }
+
+    void punto15(){
+
+    }
 }
