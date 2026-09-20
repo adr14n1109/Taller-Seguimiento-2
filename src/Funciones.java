@@ -291,11 +291,45 @@ public class Funciones {
 
         return descuento;
     }
-    void punto17(){
+
+    void punto17() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese el valor de la venta: ");
         double punto17 = sc.nextDouble();
         calcularVentaConIVA(punto17);
     }
+
+    double evaluarEstudiante(double n1, double n2, double n3, double n4, double n5) {
+        double notaFinal = calcularPromedio(n1, n2, n3, n4, n5);
+
+        System.out.println("NOta final: " + notaFinal);
+
+        if (notaFinal < 2.0) {
+            System.out.println("El estudiante NO PUEDE HABILITAR.");
+        } else if (notaFinal < 3.0) {
+            System.out.println("El estudiante REPROBÓ.");
+        } else {
+            System.out.println("El estudiante APROBÓ.");
+            if (notaFinal > 4.5) {
+                System.out.println("¡Felicitaciones,eres un crack!");
+            }
+        }
+        return notaFinal;
+    }
+    void punto18(){
+           Scanner sc = new Scanner(System.in);
+
+            System.out.print("Ingrese nota 1 (15%): ");
+            double n1 = sc.nextDouble();
+            System.out.print("Ingrese nota 2 (20%): ");
+            double n2 = sc.nextDouble();
+            System.out.print("Ingrese nota 3 (15%): ");
+            double n3 = sc.nextDouble();
+            System.out.print("Ingrese nota 4 (30%): ");
+            double n4 = sc.nextDouble();
+            System.out.print("Ingrese nota 5 (20%): ");
+            double n5 = sc.nextDouble();
+            evaluarEstudiante(n1, n2, n3, n4, n5);
+        }
 }

@@ -21,6 +21,7 @@ public class Main{
         //funciones.punto14();
         //funciones.punto15();
         //funciones.punto16();
-        funciones.punto17();
+        //funciones.punto17();
+        funciones.punto18();
     }
 }
