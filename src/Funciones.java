@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Funciones {
-    void punto1(){
+    void punto1() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese el primer texto: ");
@@ -16,12 +16,12 @@ public class Funciones {
         sc.close();
     }
 
-    void punto2(){
+    void punto2() {
         String nombre = "adrian";
         System.out.println("Hola " + nombre);
     }
 
-    void punto3(){
+    void punto3() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese un número: ");
@@ -33,7 +33,7 @@ public class Funciones {
         sc.close();
     }
 
-    void punto4(){
+    void punto4() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese el primer número: ");
@@ -48,7 +48,7 @@ public class Funciones {
         sc.close();
     }
 
-    void punto5(){
+    void punto5() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese el primer número: ");
@@ -72,7 +72,7 @@ public class Funciones {
         sc.close();
     }
 
-    void punto6(){
+    void punto6() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese un número decimal: ");
@@ -86,10 +86,12 @@ public class Funciones {
 
         sc.close();
     }
+
     double calcularPromedio(double n1, double n2, double n3, double n4, double n5) {
         return n1 * 0.15 + n2 * 0.20 + n3 * 0.15 + n4 * 0.30 + n5 * 0.20;
     }
-    void punto7(){
+
+    void punto7() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese la nota 1: ");
@@ -114,7 +116,8 @@ public class Funciones {
         double valorIVA = precioBruto * 0.19;
         return precioBruto + valorIVA;
     }
-    void punto8(){
+
+    void punto8() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese el precio bruto (sin IVA): ");
@@ -130,7 +133,7 @@ public class Funciones {
         sc.close();
     }
 
-    void punto9(){
+    void punto9() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese el radio del círculo: ");
@@ -145,7 +148,7 @@ public class Funciones {
         sc.close();
     }
 
-    void punto10(){
+    void punto10() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese la longitud del lado del hexágono: ");
@@ -158,14 +161,14 @@ public class Funciones {
         sc.close();
     }
 
-    void punto11(){
+    void punto11() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Ingrese la cantidad de numeros: ");
         int n = sc.nextInt();
 
         double suma = 0;
-        for (int i = 0; i <= n ; i++) {
+        for (int i = 0; i <= n; i++) {
             System.out.println("Ingrese el numero " + i + ": ");
             double numero = sc.nextDouble();
             suma += numero;
@@ -177,7 +180,7 @@ public class Funciones {
         sc.close();
     }
 
-    void punto12(){
+    void punto12() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese x1: ");
@@ -198,7 +201,7 @@ public class Funciones {
         sc.close();
     }
 
-    void punto13(){
+    void punto13() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese un dígito: ");
@@ -218,7 +221,7 @@ public class Funciones {
         sc.close();
     }
 
-    void punto14(){
+    void punto14() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese la cantidad de segundos: ");
@@ -234,7 +237,65 @@ public class Funciones {
         sc.close();
     }
 
-    void punto15(){
+    double parOImpar(double numero) {
+        if (numero % 2 == 0) {
+            System.out.println(numero + " Es Par.");
+        } else {
+            System.out.println(numero + " Es Impar.");
+        }
+        return numero;
+    }
 
+    void punto15() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese un numero: ");
+        double punto15 = sc.nextDouble();
+        parOImpar(punto15);
+    }
+
+    double positivoONegativo(double numero) {
+        if (numero > 0) {
+            System.out.println(numero + " es Positivo.");
+        } else if (numero < 0) {
+            System.out.println(numero + " es Negativo.");
+        } else {
+            System.out.println(numero + " es Cero.");
+        }
+        return numero;
+    }
+
+    void punto16() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese un numero: ");
+        double punto16 = sc.nextDouble();
+        positivoONegativo(punto16);
+    }
+
+    double calcularVentaConIVA(double venta) {
+        double descuento = 0;
+
+        if (venta > 150000) {
+            descuento = venta * 0.05;
+        }
+        double ventaConDescuento = venta - descuento;
+        double totalConIVA = calcularIVA(ventaConDescuento);
+        double IVA = totalConIVA - ventaConDescuento;
+
+        System.out.println("Venta original: $" + venta);
+        System.out.println("Descuento aplicado: $" + descuento);
+        System.out.println("Venta con descuento:$" + ventaConDescuento);
+        System.out.println("IVA: $" + IVA);
+        System.out.println("Total a pagar: $" + totalConIVA);
+
+        return descuento;
+    }
+    void punto17(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese el valor de la venta: ");
+        double punto17 = sc.nextDouble();
+        calcularVentaConIVA(punto17);
     }
 }

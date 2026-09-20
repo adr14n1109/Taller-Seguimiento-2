@@ -1,6 +1,10 @@
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Scanner;
+
 public class Main{
-    public static void main(String[] args){
-    Funciones funciones = new Funciones();
+    public static void main(String[] args) {
+        Funciones funciones = new Funciones();
         //funciones.punto1();
         //funciones.punto2();
         //funciones.punto3();
@@ -14,6 +18,9 @@ public class Main{
         //funciones.punto11();
         //funciones.punto12();
         //funciones.punto13();
-        funciones.punto14();
+        //funciones.punto14();
+        //funciones.punto15();
+        //funciones.punto16();
+        funciones.punto17();
     }
 }
