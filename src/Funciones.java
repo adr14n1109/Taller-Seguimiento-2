@@ -317,19 +317,148 @@ public class Funciones {
         }
         return notaFinal;
     }
-    void punto18(){
-           Scanner sc = new Scanner(System.in);
 
-            System.out.print("Ingrese nota 1 (15%): ");
-            double n1 = sc.nextDouble();
-            System.out.print("Ingrese nota 2 (20%): ");
-            double n2 = sc.nextDouble();
-            System.out.print("Ingrese nota 3 (15%): ");
-            double n3 = sc.nextDouble();
-            System.out.print("Ingrese nota 4 (30%): ");
-            double n4 = sc.nextDouble();
-            System.out.print("Ingrese nota 5 (20%): ");
-            double n5 = sc.nextDouble();
-            evaluarEstudiante(n1, n2, n3, n4, n5);
+    void punto18() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese nota 1 (15%): ");
+        double n1 = sc.nextDouble();
+        System.out.print("Ingrese nota 2 (20%): ");
+        double n2 = sc.nextDouble();
+        System.out.print("Ingrese nota 3 (15%): ");
+        double n3 = sc.nextDouble();
+        System.out.print("Ingrese nota 4 (30%): ");
+        double n4 = sc.nextDouble();
+        System.out.print("Ingrese nota 5 (20%): ");
+        double n5 = sc.nextDouble();
+        evaluarEstudiante(n1, n2, n3, n4, n5);
+    }
+
+    void resolverEcuacionCuadratica(double a, double b, double c) {
+        if (a == 0) {
+            System.out.println("No es una ecuación cuadratica");
+            return;
         }
+        double discriminante = (b * b) - (4 * a * c);
+
+        if (discriminante > 0) {
+            double x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+            double x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+            System.out.println("Dos soluciones reales: ");
+            System.out.println("x1 = " + x1);
+            System.out.println("x2 = " + x2);
+        } else if (discriminante == 0) {
+            double x = -b / (2 * a);
+            System.out.println("Una unica solucion real");
+            System.out.println("x = " + x);
+        } else {
+            double parteReal = -b / (2 * a);
+            double parteImaginaria = Math.sqrt(-discriminante) / (2 * a);
+            System.out.println("Dos soluciones complejas: ");
+            System.out.println("x1 = " + parteReal + " + " + parteImaginaria + "i");
+            System.out.println("x2 = " + parteReal + " - " + parteImaginaria + "i");
+        }
+    }
+
+    void punto19() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese el valor de a: ");
+        double a = sc.nextDouble();
+        System.out.print("Ingrese el valor de b: ");
+        double b = sc.nextDouble();
+        System.out.print("Ingrese el valor de c: ");
+        double c = sc.nextDouble();
+        resolverEcuacionCuadratica(a, b, c);
+    }
+
+    void validarUsuario(String usuarioIngresado, String contrasenaIngresada) {
+        final String UsuarioPredefinido = "adrian";
+        final String contrasenaPredefinida = "1124";
+
+        if (usuarioIngresado.equals(UsuarioPredefinido) && contrasenaIngresada.equals(contrasenaPredefinida)) {
+            System.out.println("Acceso concedido. Bienvenido, " + usuarioIngresado);
+        } else {
+            System.out.println("Acceso denegado. Usuario o contraseña incorrectos");
+        }
+    }
+
+    void punto20() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese usuario: ");
+        String usuario = sc.nextLine();
+        System.out.print("Ingrese contraseña: ");
+        String contrasena = sc.nextLine();
+        validarUsuario(usuario, contrasena);
+    }
+
+    void punto21() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese un numero entre 0 y 10: ");
+        int numero = sc.nextInt();
+
+        String[] nombres = {"Cero", "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez"};
+
+        if (numero >= 0 && numero <= 10) {
+            System.out.printf(nombres[numero]);
+        } else {
+            System.out.println("Numero fuera de rango (0-10)");
+        }
+        sc.close();
+    }
+
+    void punto22() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese un numero menor a 100.000: ");
+        int numero = sc.nextInt();
+
+        int n = Math.abs(numero);
+        int contador = 0;
+
+        if (n == 0) {
+            contador = 1;
+        } else {
+            while (n > 0) {
+                n = n / 10;
+                contador++;
+            }
+        }
+        System.out.println("El numero " + numero + " tiene " + contador + " digitos.");
+
+        sc.close();
+    }
+
+    void punto23() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el primer numero: ");
+        int a = sc.nextInt();
+        System.out.println("Ingrese el segundo numero: ");
+        int b = sc.nextInt();
+        System.out.println("Ingrese el tercer numero: ");
+        int c = sc.nextInt();
+
+        if (a < b && b < c) {
+            System.out.println("Esta aumentando");
+        } else if (a > b && b > c) {
+            System.out.println("Esta disminuyendo");
+        } else {
+            System.out.println("Ni aumenta, ni disminuye");
+        }
+        sc.close();
+    }
+
+    void punto24() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese un numero entre 1 y 7: ");
+        int dia = sc.nextInt();
+
+        String[] dias = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
+        if (dia >= 1 && dia <= 7){
+            System.out.println(dias[dia-1]);
+        }else{
+            System.out.println("Numero fuera de rango (1-7)");
+        }
+        sc.close();
+    }
 }
