@@ -1,3 +1,6 @@
+import com.sun.security.jgss.GSSUtil;
+
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Funciones {
@@ -458,6 +461,69 @@ public class Funciones {
             System.out.println(dias[dia-1]);
         }else{
             System.out.println("Numero fuera de rango (1-7)");
+        }
+        sc.close();
+    }
+
+    public static String invertirTexto(String texto){
+        String invertido = "";
+        for (int i = texto.length() -1 ; i >= 0; i--) {
+            invertido += texto.charAt(i);
+        }
+        return invertido;
+    }
+    void punto25(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese un texto: ");
+        String texto = sc.nextLine();
+        System.out.println("Texto invertido: " + invertirTexto(texto));
+
+        sc.close();
+    }
+
+    void punto26(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese un texto: ");
+        String texto = sc.nextLine();
+
+        String[] palabras = texto.trim().split("\\s+");
+        String resultado = "";
+
+        for (String palabra : palabras){
+            resultado += palabra.substring(0,1).toUpperCase()+palabra.substring(1).toLowerCase() + " ";
+        }
+        System.out.println(resultado.trim());
+
+        sc.close();
+    }
+
+    void punto27(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese un texto: ");
+        String texto = sc.nextLine();
+
+        String[] palabras = texto.trim().split("\\s+");
+
+        if (palabras.length >= 2){
+            System.out.println("La penultima palabra del texto es: " + palabras[palabras.length - 2]);
+        }else{
+            System.out.println("El texto debe tener al menos 2 palabras");
+        }
+
+        sc.close();
+    }
+
+    void punto28(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el primer texto: ");
+        String texto1 = sc.nextLine();
+        System.out.println("Ingrese el segundo texto: ");
+        String texto2 = sc.nextLine();
+
+        if (texto2.contains(texto1)){
+            System.out.println("El segundo texto contiene al primero");
+        }else{
+            System.out.println("El segundo texto NO contiene al primero");
         }
         sc.close();
     }
