@@ -527,4 +527,59 @@ public class Funciones {
         }
         sc.close();
     }
-}
+
+    boolean esPalindromo (String palabra){
+        String texto = palabra.trim().toLowerCase();
+        return texto.equals(invertirTexto(texto));
+    }
+
+    void punto29(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese una palabra: ");
+        String palabra = sc.nextLine();
+
+        if(esPalindromo(palabra)){
+            System.out.println("La palabra \"" + palabra + "\" Es palindromo");
+        }else {
+            System.out.println("La palabra \"" + palabra + "\" NO es palindromo");
+        }
+        sc.close();
+    }
+
+    double calcularAreaPoligono(double[] x, double[] y){
+        int n = x.length;
+        double suma = 0;
+
+        for (int i = 0; i < n; i++) {
+            int siguiente = (i + 1) % n;
+            suma += x[i] * y[siguiente] - x[siguiente] * y[i];
+        }
+        return Math.abs(suma) / 2;
+    }
+
+    void punto30(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese la cantidad de vertices del poligono (minimo de 3): ");
+        int n = sc.nextInt();
+
+        if(n < 3){
+            System.out.println("Un poligono necesita al menos 3 vertices");
+            sc.close();
+            return;
+        }
+
+        double[] x = new double[n];
+        double[] y = new double[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("Ingrese x" + (i + 1) + ": ");
+            x[i] = sc.nextDouble();
+            System.out.print("Ingrese y" + (i + 1) + ": ");
+            y[i] = sc.nextDouble();
+        }
+
+        System.out.println("El area del poligono es: " + calcularAreaPoligono(x, y));
+        sc.close();
+        }
+    }
+

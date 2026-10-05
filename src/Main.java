@@ -43,5 +43,14 @@ public class Main{
         //funciones.punto28();
         //funciones.punto29();
         //funciones.punto30();
+
+        //PARTE IV
+        //funciones.punto31();
+        //funciones.punto32();
+        //funciones.punto33();
+        //funciones.punto34();
+        //funciones.punto35();
+        //funciones.punto36();
+        //funciones.punto37();
     }
 }
