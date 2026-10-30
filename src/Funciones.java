@@ -457,22 +457,23 @@ public class Funciones {
         int dia = sc.nextInt();
 
         String[] dias = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
-        if (dia >= 1 && dia <= 7){
-            System.out.println(dias[dia-1]);
-        }else{
+        if (dia >= 1 && dia <= 7) {
+            System.out.println(dias[dia - 1]);
+        } else {
             System.out.println("Numero fuera de rango (1-7)");
         }
         sc.close();
     }
 
-    public static String invertirTexto(String texto){
+    public static String invertirTexto(String texto) {
         String invertido = "";
-        for (int i = texto.length() -1 ; i >= 0; i--) {
+        for (int i = texto.length() - 1; i >= 0; i--) {
             invertido += texto.charAt(i);
         }
         return invertido;
     }
-    void punto25(){
+
+    void punto25() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese un texto: ");
         String texto = sc.nextLine();
@@ -481,7 +482,7 @@ public class Funciones {
         sc.close();
     }
 
-    void punto26(){
+    void punto26() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese un texto: ");
         String texto = sc.nextLine();
@@ -489,64 +490,64 @@ public class Funciones {
         String[] palabras = texto.trim().split("\\s+");
         String resultado = "";
 
-        for (String palabra : palabras){
-            resultado += palabra.substring(0,1).toUpperCase()+palabra.substring(1).toLowerCase() + " ";
+        for (String palabra : palabras) {
+            resultado += palabra.substring(0, 1).toUpperCase() + palabra.substring(1).toLowerCase() + " ";
         }
         System.out.println(resultado.trim());
 
         sc.close();
     }
 
-    void punto27(){
+    void punto27() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese un texto: ");
         String texto = sc.nextLine();
 
         String[] palabras = texto.trim().split("\\s+");
 
-        if (palabras.length >= 2){
+        if (palabras.length >= 2) {
             System.out.println("La penultima palabra del texto es: " + palabras[palabras.length - 2]);
-        }else{
+        } else {
             System.out.println("El texto debe tener al menos 2 palabras");
         }
 
         sc.close();
     }
 
-    void punto28(){
+    void punto28() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el primer texto: ");
         String texto1 = sc.nextLine();
         System.out.println("Ingrese el segundo texto: ");
         String texto2 = sc.nextLine();
 
-        if (texto2.contains(texto1)){
+        if (texto2.contains(texto1)) {
             System.out.println("El segundo texto contiene al primero");
-        }else{
+        } else {
             System.out.println("El segundo texto NO contiene al primero");
         }
         sc.close();
     }
 
-    boolean esPalindromo (String palabra){
+    boolean esPalindromo(String palabra) {
         String texto = palabra.trim().toLowerCase();
         return texto.equals(invertirTexto(texto));
     }
 
-    void punto29(){
+    void punto29() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese una palabra: ");
         String palabra = sc.nextLine();
 
-        if(esPalindromo(palabra)){
+        if (esPalindromo(palabra)) {
             System.out.println("La palabra \"" + palabra + "\" Es palindromo");
-        }else {
+        } else {
             System.out.println("La palabra \"" + palabra + "\" NO es palindromo");
         }
         sc.close();
     }
 
-    double calcularAreaPoligono(double[] x, double[] y){
+    double calcularAreaPoligono(double[] x, double[] y) {
         int n = x.length;
         double suma = 0;
 
@@ -557,12 +558,12 @@ public class Funciones {
         return Math.abs(suma) / 2;
     }
 
-    void punto30(){
+    void punto30() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese la cantidad de vertices del poligono (minimo de 3): ");
         int n = sc.nextInt();
 
-        if(n < 3){
+        if (n < 3) {
             System.out.println("Un poligono necesita al menos 3 vertices");
             sc.close();
             return;
@@ -580,6 +581,129 @@ public class Funciones {
 
         System.out.println("El area del poligono es: " + calcularAreaPoligono(x, y));
         sc.close();
+    }
+
+    void punto31() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
         }
     }
+    void punto32(){
+        for (int i = 1; i < 10; i++) {
+            System.out.println(2 * i -1);
+        }
+    }
+    void punto33(){
+        for (int i = 1; i < 10; i++) {
+            System.out.println(2 * 1);
+        }
+    }
+    void punto34(){
+        Scanner sc = new Scanner(System.in);
+        int numero = 0;
+        boolean valido = false;
+
+        while (!valido){
+            System.out.println("Ingrese un numero entero positivo: ");
+            if(sc.hasNextInt()) {
+                numero = sc.nextInt();
+                if (numero > 0) {
+                    valido = true;
+                } else {
+                    System.out.println("Valor no permitido, el numero debe ser positivo");
+                }
+            }else{
+                sc.next();
+                System.out.println("Valor no permitido, el numero debe ser entero");
+            }
+        }
+        System.out.println("El numero ingresdo es: " +  numero);
+        sc.close();
+    }
+    String decimalABinario(int decimal){
+        if(decimal == 0){
+            return "0";
+        }
+        String binario = "";
+        while (decimal > 0){
+            binario = (decimal % 2) + binario;
+            decimal = decimal/2;
+        }
+        return binario;
+    }
+
+    void punto35(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese un numero decimal entero positivo: ");
+        int decimal = sc.nextInt();
+
+        if(decimal < 0) {
+            System.out.println("El numero debe ser positivo");
+        }else{
+            System.out.println("El numero " + decimal + " en binario es : "+  decimalABinario(decimal));
+        }
+        sc.close();
+    }
+    int binarioADecimal (String binario){
+        int decimal = 0;
+        for (int i = 0; i < binario.length(); i++) {
+            int digito = binario.charAt(i) - '0';
+            decimal = decimal * 2 + digito;
+        }
+        return decimal;
+    }
+    void punto36(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese un numero binario: ");
+        String binario = sc.nextLine().trim();
+
+        if(binario.isEmpty() || !binario.matches("[01]+")) {
+            System.out.println("El numero binario solo puede contener 0 y 1");
+        }else{
+            System.out.println("El numero " + binario + " en decimal es: " + binarioADecimal(binario));
+        }
+        sc.close();
+    }
+    void punto37(){
+        for (int fila = 1; fila <= 10 ; fila++) {
+            String linea = "";
+            for(int numero = 1; numero <= fila; numero++){
+                linea += numero;
+            }
+            System.out.println(linea);
+        }
+    }
+    void punto38(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el numero de filas: ");
+        int filas = sc.nextInt();
+
+        for (int i = 1; i <= filas ; i++) {
+            String linea = "";
+            for(int j = 1; j <= i; j++){
+                linea += "@";
+            }
+            System.out.println(linea);
+        }
+        sc.close();
+    }
+    void punto39(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el numero de filas: ");
+        int filas = sc.nextInt();
+
+        for (int i = 0; i < filas; i++) {
+            String linea = "";
+            for (int espacios = 0; espacios < i; espacios++) {
+                linea += " ";
+            }
+            for (int asteriscos = 0; asteriscos < filas - i; asteriscos++) {
+                linea += "*";
+            }
+            System.out.println(linea);
+        }
+        sc.close();
+        }
+    }
+    
 
